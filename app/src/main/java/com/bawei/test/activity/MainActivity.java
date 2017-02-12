@@ -14,6 +14,8 @@ import com.bawei.test.R;
 import com.bawei.test.fragment.Fragment5;
 import com.bawei.test.fragment.Fragment6;
 import com.bawei.test.fragment.Fragment7;
+import com.zhy.magicviewpager.transformer.RotateUpPageTransformer;
+import com.zhy.magicviewpager.transformer.RotateYTransformer;
 
 public class MainActivity extends FragmentActivity {
 
@@ -33,12 +35,12 @@ public class MainActivity extends FragmentActivity {
         if(b==false){
             et.putBoolean("flag",true).commit();
             vp.setAdapter(new MyAdapter(getSupportFragmentManager()));
-
         }else{
             Intent in = new Intent(MainActivity.this,MainActivity_yindao.class);
             startActivity(in);
             finish();
         }
+        vp.setPageTransformer(true,new RotateYTransformer());
     }
 
     class MyAdapter extends FragmentPagerAdapter{
