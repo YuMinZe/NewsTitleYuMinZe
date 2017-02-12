@@ -50,7 +50,7 @@ public class MainActivity_shouye extends AppCompatActivity implements View.OnCli
 
         fragmentManager = getSupportFragmentManager();
 
-        //RadioGroup的点击事件
+        //找到控件
         wai_shouye_ll = (LinearLayout) findViewById(R.id.wai_shouye_ll);
         wai_shipin_ll = (LinearLayout) findViewById(R.id.wai_shipin_ll);
         wai_guanzhu_ll = (LinearLayout) findViewById(R.id.wai_guanzhu_ll);
@@ -62,6 +62,7 @@ public class MainActivity_shouye extends AppCompatActivity implements View.OnCli
         wai_wode_iv = (ImageView) findViewById(R.id.wai_wode_iv);
 
         wai_shouye = (Button) findViewById(R.id.wai_shouye);
+        //给初始颜色
         wai_shouye.setTextColor(Color.RED);
         wai_shipin = (Button) findViewById(R.id.wai_shipin);
         wai_guanzhu = (Button) findViewById(R.id.wai_guanzhu);
@@ -71,7 +72,7 @@ public class MainActivity_shouye extends AppCompatActivity implements View.OnCli
         wai_shipin_ll.setOnClickListener(this);
         wai_guanzhu_ll.setOnClickListener(this);
         wai_wode_ll.setOnClickListener(this);
-
+        //初始值
         Fragment1 fragment1 = new Fragment1();
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.wai_fm,fragment1).commit();
@@ -80,7 +81,7 @@ public class MainActivity_shouye extends AppCompatActivity implements View.OnCli
 
 
 
-
+    //两次退出
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK
@@ -98,7 +99,7 @@ public class MainActivity_shouye extends AppCompatActivity implements View.OnCli
         }
         return super.onKeyDown(keyCode, event);
     }
-
+    //点击事件
     @Override
     public void onClick(View v) {
         switch (v.getId()){

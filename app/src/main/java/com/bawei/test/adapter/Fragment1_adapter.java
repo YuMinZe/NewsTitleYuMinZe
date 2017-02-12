@@ -17,7 +17,7 @@ public class Fragment1_adapter extends FragmentPagerAdapter {
     private  Context context;
     private  String[] title;
     private List<Fragment> list;
-
+    //接收  传值
     public Fragment1_adapter(FragmentManager fm, Context context, String[] title) {
         super(fm);
         this.context = context;
@@ -26,17 +26,17 @@ public class Fragment1_adapter extends FragmentPagerAdapter {
     public void setlist(List<Fragment> list){
         this.list = list;
     }
-
+    //viewpager与title关联
     @Override
     public CharSequence getPageTitle(int position) {
         return title[position];
     }
-
+    //适配
     @Override
     public Fragment getItem(int position) {
         return list.get(position);
     }
-
+    //根据list 中fragment数目  判断viewpager的大小
     @Override
     public int getCount() {
         return list.size();

@@ -41,15 +41,20 @@ public class Fragment1 extends Fragment {
         tab = (TabLayout) view.findViewById(R.id.nei_fragment1_tab);
         vp = (ViewPager) view.findViewById(R.id.nei_fragmen1_vp);
         initdata();
+        //实例化   传值
         Fragment1_adapter adapter = new Fragment1_adapter(getActivity().getSupportFragmentManager(),getActivity(),title);
         adapter.setlist(list);
         vp.setAdapter(adapter);
+        //关联viewpager
         tab.setupWithViewPager(vp);
+        //tablayout的模式
         tab.setTabMode(TabLayout.MODE_SCROLLABLE);
+
     }
 
     private void initdata() {
         list = new ArrayList<Fragment>();
+        //根据title的大小  创建fragment  并赋值给list
         for (int i=0;i<title.length;i++){
             Fragment1_neirong fragment = new Fragment1_neirong();
             list.add(fragment);

@@ -27,15 +27,18 @@ public class MainActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //创建SharedPreferences
         sp = getSharedPreferences("1502H",MODE_PRIVATE);
         et = sp.edit();
         vp = (ViewPager) findViewById(R.id.wai_vp);
-
+        //取值   判断是否是第一次进入
         boolean b = sp.getBoolean("flag", false);
         if(b==false){
+            //向SharedPreferences上传值
             et.putBoolean("flag",true).commit();
             vp.setAdapter(new MyAdapter(getSupportFragmentManager()));
         }else{
+            //跳转
             Intent in = new Intent(MainActivity.this,MainActivity_yindao.class);
             startActivity(in);
             finish();
@@ -48,7 +51,7 @@ public class MainActivity extends FragmentActivity {
         public MyAdapter(FragmentManager fm) {
             super(fm);
         }
-
+        //加载fragment
         @Override
         public Fragment getItem(int position) {
             Fragment fragment = null;
