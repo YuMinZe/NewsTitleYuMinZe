@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.bawei.test.Application.MyApplication;
 import com.bawei.test.R;
 import com.bawei.test.fragment.Fragment1;
 import com.bawei.test.fragment.Fragment2;
@@ -72,10 +73,25 @@ public class MainActivity_shouye extends AppCompatActivity implements View.OnCli
         wai_shipin_ll.setOnClickListener(this);
         wai_guanzhu_ll.setOnClickListener(this);
         wai_wode_ll.setOnClickListener(this);
-        //初始值
-        Fragment1 fragment1 = new Fragment1();
-        fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.wai_fm,fragment1).commit();
+
+        if(MyApplication.isFalg){
+            //初始值
+            Fragment1 fragment1 = new Fragment1();
+            fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.wai_fm,fragment1).commit();
+            wai_shouye_iv.setImageResource(R.drawable.wai_yesshouye);
+            wai_shouye.setTextColor(Color.RED);
+
+            wai_wode_iv.setImageResource(R.drawable.wai_nowode);
+            wai_wode.setTextColor(Color.BLACK);
+            MyApplication.isFalg=false;
+        }else {
+            wai_wode_iv.setImageResource(R.drawable.wai_yeswode);
+            wai_wode.setTextColor(Color.RED);
+            wai_shouye_iv.setImageResource(R.drawable.wai_noshouye);
+            wai_shouye.setTextColor(Color.BLACK);
+        }
+
 
     }
 

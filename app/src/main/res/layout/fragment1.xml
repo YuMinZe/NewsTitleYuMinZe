@@ -2,16 +2,47 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="?attr/mainBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.design.widget.TabLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="#ff0033">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/wai_title"
+            android:scaleType="fitXY"
+            android:id="@+id/wai_title_iv"/>
+
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:id="@+id/nei_fragment1_tab"
-        app:tabSelectedTextColor="@android:color/holo_red_dark">
+        android:orientation="horizontal">
 
-    </android.support.design.widget.TabLayout>
+        <android.support.design.widget.TabLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:id="@+id/nei_fragment1_tab"
+            app:tabSelectedTextColor="@android:color/holo_red_dark">
+        </android.support.design.widget.TabLayout>
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/wai_jiahao"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="6dp"
+            android:id="@+id/nei_fragment1_pindao"/>
+    </LinearLayout>
+
+
+
 
     <android.support.v4.view.ViewPager
         android:layout_width="match_parent"

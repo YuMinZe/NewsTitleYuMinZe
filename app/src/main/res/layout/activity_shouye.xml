@@ -13,6 +13,7 @@
 
     </FrameLayout>
     <RadioGroup
+        android:background="?attr/mainBackground"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:id="@+id/wai_rg"
@@ -30,7 +31,8 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/wai_yesshouye"
-                android:id="@+id/wai_shouye_iv"/>
+                android:id="@+id/wai_shouye_iv"
+                />
 
             <RadioButton
                 android:layout_width="match_parent"
