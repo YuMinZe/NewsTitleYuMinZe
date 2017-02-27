@@ -86,6 +86,7 @@ public class MainActivity_shouye extends AppCompatActivity implements View.OnCli
             wai_wode.setTextColor(Color.BLACK);
             MyApplication.isFalg=false;
         }else {
+
             wai_wode_iv.setImageResource(R.drawable.wai_yeswode);
             wai_wode.setTextColor(Color.RED);
             wai_shouye_iv.setImageResource(R.drawable.wai_noshouye);
